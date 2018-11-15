@@ -1,0 +1,20 @@
+﻿@{
+
+    string CurrentName = Convert.ToString(HttpContext.Current.Request.RequestContext.RouteData.Values["Controller"]);
+    string layout = "";
+    switch (CurrentName)
+    {
+        case "Dashboard":
+            layout = "~/Views/Dashboard/_Dashboard.cshtml";
+            break;
+        default:
+            //home layout 
+
+            layout = "~/Views/Shared/_Layout.cshtml";
+            break;
+    }
+
+    Layout = layout;
+
+
+}
